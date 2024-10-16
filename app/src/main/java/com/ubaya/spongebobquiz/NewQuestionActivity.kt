@@ -76,19 +76,18 @@ class NewQuestionActivity : AppCompatActivity() {
         }
 
         binding.btnSave.setOnClickListener {
-//            val radioAnswer = findViewById<RadioButton>(binding.radioAnswer.
-//            checkedRadioButtonId)
+            val radioAnswer = binding.answerGroup.checkedRadioButtonId
             val selectedImageName = items[binding.spinnerImage.selectedItemPosition]
             val imgid = this.resources.getIdentifier(selectedImageName, "drawable",
                 this.packageName)
 
-//            val newQuestion = QuestionBank(binding.txtQuestion.text.toString(),
-//                radioAnswer.text.toString().lowercase().toBoolean(),
-//                imgid)
+            val newQuestion = QuestionBank(binding.txtQuestion.text.toString(),
+                binding.radioAnswer.text.toString().lowercase().toBoolean(),
+                imgid)
 
-//            val questionsList = QuestionData.questions.toMutableList()
-//            questionsList.add(newQuestion)
-//            QuestionData.questions = questionsList.toTypedArray()
+            val questionsList = QuestionData.questions.toMutableList()
+            questionsList.add(newQuestion)
+            QuestionData.questions = questionsList.toTypedArray()
 
             Toast.makeText(this, "Question Added", Toast.LENGTH_SHORT).show()
 
