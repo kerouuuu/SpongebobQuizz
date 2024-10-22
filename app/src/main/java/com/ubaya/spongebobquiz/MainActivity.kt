@@ -28,15 +28,9 @@ class MainActivity : AppCompatActivity() {
         val playerName = intent.getStringExtra(IntroActivity.PLAYER_NAME)
         binding.txtWelcome.text = "Welcome, " + playerName + "!"
 
-        val txtQuestion = findViewById<TextView>(R.id.txtQuestion)
-        val btn = findViewById<Button>(R.id.btnTrue)
-        btn.setOnClickListener {
-            txtQuestion.text = "Spongebob Quiz"
-        }
-
-        binding.btnTrue.setOnClickListener {
-            val intent = Intent(this, NewQuestionActivity::class.java)
-            startActivity(intent)
+        binding.btnQuestion.setOnClickListener{
+            val i = Intent(this, QuestionListActivty::class.java)
+            startActivity(i)
         }
     }
 }

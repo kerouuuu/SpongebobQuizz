@@ -23,6 +23,7 @@ class QuestionAdapter():RecyclerView.Adapter<QuestionAdapter.QuestionViewHolder>
         holder.binding.btnEdit1.setOnClickListener {
             val intent = Intent(holder.itemView.context, EditQuestionActivity::class.java)
             intent.putExtra("question_index", position)
+            intent.putExtra("data", QuestionData.questions[position])
             holder.itemView.context.startActivity(intent)
         }
 
